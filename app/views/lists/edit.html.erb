@@ -1,0 +1,7 @@
+<h1>Change It Up</h1>
+
+<%= form_for @list do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: 'new list name' %>
+  <%= f.submit %>
+<% end %>

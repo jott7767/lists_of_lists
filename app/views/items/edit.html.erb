@@ -1,0 +1,7 @@
+<h1>Change <%= @item.title %> in: <%= @list.title %></h1>
+
+<%= form_for [@list, @item] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>

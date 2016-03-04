@@ -1,0 +1,21 @@
+<h1>Items for: <%= @list.title %></h1>
+<br />
+
+<%= link_to 'Add item', new_list_item_path(@list) %>
+<%= link_to 'Change List Name', edit_list_path %>
+<%= link_to 'Delete This List', list_path(@list), method: :delete, data: {confirm: 'Delete this list?'}  %>
+<br />
+<%if @items.any? %>
+    <% @list.items.each do |item| %>
+        <%= item.title %>
+        <%= link_to 'Edit', edit_list_item_path(@list, item) %>
+        <%= link_to 'Remove', list_item_path(@list, item), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <br />
+    <% end %>
+  </ul>
+<% else %>
+  <h2>No items. Make some plans and put them here</h2>
+<% end%>
+<hr />
+
+<%= link_to 'Back to lists', lists_path %>
